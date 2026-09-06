@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sell Your House Fast For Cash | Cornerstone Housing NJ</title>
+  <meta name="description" content="Get a free, no-obligation cash offer on your New Jersey home. No repairs, no fees, close in 7-14 days." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <style>
+    :root {
+      --navy:#0f2044; --navy-dark:#091628; --navy-mid:#1a3560;
+      --gold:#c9922a; --gold-light:#e8b84b; --gold-dark:#a67520;
+      --white:#ffffff; --off-white:#f7f8fc; --gray:#6b7280;
+      --gray-light:#e5e9f0; --text:#1f2937; --radius:10px;
+      --shadow:0 4px 24px rgba(15,32,68,.12);
+      --shadow-lg:0 12px 48px rgba(15,32,68,.18);
+      --transition:all .3s cubic-bezier(.4,0,.2,1);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--white); line-height: 1.7; }
+    a { text-decoration: none; color: inherit; }
+    h1,h2,h3,h4 { font-family: 'Montserrat', sans-serif; line-height: 1.2; }
+
+    /* Navbar */
+    #navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 1rem 0; background: var(--navy-dark); box-shadow: 0 4px 30px rgba(0,0,0,.35); }
+    .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 1.15rem; color: var(--white); display: flex; align-items: center; gap: .6rem; }
+    .nav-logo .logo-icon { width: 38px; height: 38px; background: linear-gradient(135deg, var(--gold-light), var(--gold)); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
+    .nav-logo span { color: var(--gold-light); }
+    .btn { display: inline-flex; align-items: center; gap: .5rem; padding: .75rem 1.75rem; border-radius: var(--radius); font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: .9rem; cursor: pointer; border: none; transition: var(--transition); }
+    .btn-gold { background: linear-gradient(135deg, var(--gold-light), var(--gold)); color: var(--white); box-shadow: 0 4px 20px rgba(201,146,42,.4); }
+    .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(201,146,42,.5); color: var(--white); }
+    .btn-outline-light { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,.5); }
+    .btn-outline-light:hover { background: rgba(255,255,255,.1); border-color: var(--white); }
+
+    /* Page Hero */
+    .page-hero {
+      background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy-mid) 100%);
+      padding: 8rem 0 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: ''; position: absolute; bottom: -100px; right: -100px;
+      width: 500px; height: 500px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(201,146,42,.1) 0%, transparent 70%);
+    }
+    .page-hero h1 { font-size: clamp(1.8rem,4vw,2.8rem); font-weight: 900; color: var(--white); margin-bottom: .75rem; }
+    .page-hero h1 span { color: var(--gold-light); }
+    .page-hero p { color: rgba(255,255,255,.7); font-size: 1.05rem; max-width: 560px; margin: 0 auto; }
+
+    /* Layout */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+    section { padding: 5rem 0; }
+
+    /* Main Form Section */
+    .form-section {
+      background: var(--off-white);
+      padding: 4rem 0;
+    }
+    .form-layout {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 4rem;
+      align-items: start;
+    }
+    .form-intro h2 {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 1rem;
+    }
+    .form-intro h2 span { color: var(--gold); }
+    .form-intro p { color: var(--gray); font-size: .95rem; line-height: 1.8; margin-bottom: 2rem; }
+    .promise-list { list-style: none; margin-bottom: 2rem; }
+    .promise-list li {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      padding: .7rem 0;
+      border-bottom: 1px solid var(--gray-light);
+      font-size: .92rem;
+      color: var(--text);
+    }
+    .promise-list li:last-child { border: none; }
+    .promise-list li i { color: var(--gold); font-size: 1.1rem; }
+    .trust-badges { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .trust-badge {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .5rem 1rem;
+      background: var(--white);
+      border: 1.5px solid var(--gray-light);
+      border-radius: 50px;
+      font-size: .8rem;
+      font-weight: 600;
+      color: var(--navy);
+    }
+    .trust-badge i { color: var(--gold); }
+
+    /* Form Card */
+    .form-card {
+      background: var(--white);
+      border-radius: 20px;
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+    }
+    .form-card-header {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+      padding: 2rem;
+      text-align: center;
+    }
+    .form-card-header h3 {
+      color: var(--white);
+      font-size: 1.3rem;
+      font-weight: 800;
+      margin-bottom: .3rem;
+    }
+    .form-card-header p { color: rgba(255,255,255,.65); font-size: .85rem; }
+    .form-card-body { padding: 2rem; }
+    .form-group { margin-bottom: 1.1rem; }
+    .form-group label {
+      display: block;
+      font-size: .8rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: .4rem;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+    .form-group label .req { color: var(--gold); margin-left: 2px; }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: .8rem 1.1rem;
+      border: 1.5px solid var(--gray-light);
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: .9rem;
+      color: var(--text);
+      background: var(--off-white);
+      transition: border-color .2s, box-shadow .2s;
+      outline: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--navy-mid);
+      box-shadow: 0 0 0 3px rgba(15,32,68,.08);
+      background: var(--white);
+    }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .contact-pref { display: flex; gap: .75rem; }
+    .pref-option { flex: 1; }
+    .pref-option input[type="radio"] { display: none; }
+    .pref-option label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .4rem;
+      padding: .6rem;
+      border: 1.5px solid var(--gray-light);
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--gray);
+      transition: var(--transition);
+      text-transform: none;
+      letter-spacing: 0;
+    }
+    .pref-option input:checked + label {
+      border-color: var(--gold);
+      background: rgba(201,146,42,.08);
+      color: var(--gold-dark);
+    }
+    .submit-btn {
+      width: 100%;
+      padding: 1rem;
+      font-size: 1rem;
+      justify-content: center;
+      margin-top: .5rem;
+      border-radius: 10px;
+    }
+    .form-note { text-align: center; font-size: .75rem; color: var(--gray); margin-top: .75rem; }
+
+    /* Process Steps */
+    .mini-steps { display: flex; gap: 1.5rem; margin: 2rem 0; }
+    .mini-step { flex: 1; text-align: center; }
+    .mini-step-num {
+      width: 44px; height: 44px;
+      background: linear-gradient(135deg, var(--gold-light), var(--gold));
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800; font-size: 1.1rem;
+      color: var(--white);
+      margin: 0 auto .6rem;
+    }
+    .mini-step-text { font-size: .8rem; color: var(--gray); font-weight: 500; }
+
+    /* Situations section */
+    #situations-sell {
+      background: var(--navy);
+      padding: 4rem 0;
+    }
+    .sit-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+    .sit-card {
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 12px;
+      padding: 1.5rem 1.2rem;
+      text-align: center;
+      transition: var(--transition);
+    }
+    .sit-card:hover {
+      background: rgba(201,146,42,.12);
+      border-color: rgba(201,146,42,.3);
+      transform: translateY(-4px);
+    }
+    .sit-card i { font-size: 2rem; color: var(--gold-light); margin-bottom: .75rem; display: block; }
+    .sit-card span { font-size: .85rem; font-weight: 600; color: rgba(255,255,255,.85); }
+
+    /* CTA strip */
+    .cta-strip {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+      padding: 2.5rem 0;
+      text-align: center;
+    }
+    .cta-strip h3 { font-size: 1.4rem; color: var(--white); font-weight: 800; margin-bottom: .5rem; }
+    .cta-strip p { color: rgba(255,255,255,.8); font-size: .92rem; margin-bottom: 1.2rem; }
+    .cta-strip-btns { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+    .btn-white { background: var(--white); color: var(--gold-dark); font-weight: 700; }
+    .btn-white:hover { background: var(--off-white); color: var(--gold-dark); transform: translateY(-2px); }
+    .btn-outline-white { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,.7); }
+    .btn-outline-white:hover { background: rgba(255,255,255,.15); }
+
+    /* Footer */
+    footer { background: var(--navy-dark); padding: 2rem 0; color: rgba(255,255,255,.6); }
+    .footer-simple { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: .82rem; }
+    .footer-simple a { color: rgba(255,255,255,.6); margin-left: 1.5rem; }
+    .footer-simple a:hover { color: var(--gold-light); }
+
+    @media (max-width: 900px) {
+      .form-layout { grid-template-columns: 1fr; }
+      .sit-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .form-row { grid-template-columns: 1fr; }
+      .sit-grid { grid-template-columns: 1fr 1fr; }
+      .mini-steps { flex-direction: column; gap: .75rem; }
+      .mini-step { display: flex; align-items: center; gap: .75rem; text-align: left; }
+      .mini-step-num { margin: 0; flex-shrink: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-icon"><i class="bi bi-house-heart-fill"></i></div>
+      <div>Cornerstone<br><span>Housing &amp; Development</span></div>
+    </a>
+    <a href="tel:+18482448994" class="btn btn-gold"><i class="bi bi-telephone-fill"></i>(848) 244-8994</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="container">
+    <h1>Get Your <span>Free Cash Offer</span></h1>
+    <p>Fill out the form below and receive a no-obligation cash offer within 24 hours. No repairs, no fees, no hassle.</p>
+  </div>
+</div>
+
+<div class="form-section">
+  <div class="container">
+    <div class="form-layout">
+      <!-- Left: Info -->
+      <div class="form-intro">
+        <h2>We Make Selling <span>Simple &amp; Fast</span></h2>
+        <p>We've helped hundreds of New Jersey homeowners sell their homes quickly and easily — without the stress of a traditional sale. Our process is completely transparent and there's zero obligation.</p>
+
+        <div class="mini-steps">
+          <div class="mini-step">
+            <div class="mini-step-num">1</div>
+            <div class="mini-step-text">Submit your property info</div>
+          </div>
+          <div class="mini-step">
+            <div class="mini-step-num">2</div>
+            <div class="mini-step-text">Get a fair cash offer in 24hrs</div>
+          </div>
+          <div class="mini-step">
+            <div class="mini-step-num">3</div>
+            <div class="mini-step-text">Close on your timeline</div>
+          </div>
+        </div>
+
+        <ul class="promise-list">
+          <li><i class="bi bi-check-circle-fill"></i>No realtor commissions or hidden fees</li>
+          <li><i class="bi bi-check-circle-fill"></i>No repairs, cleaning, or upgrades needed</li>
+          <li><i class="bi bi-check-circle-fill"></i>No showings or open houses</li>
+          <li><i class="bi bi-check-circle-fill"></i>Close in as little as 7–14 days</li>
+          <li><i class="bi bi-check-circle-fill"></i>We cover standard closing costs</li>
+          <li><i class="bi bi-check-circle-fill"></i>We buy in any condition — as-is</li>
+          <li><i class="bi bi-check-circle-fill"></i>Your information is 100% confidential</li>
+        </ul>
+
+        <div class="trust-badges">
+          <div class="trust-badge"><i class="bi bi-award-fill"></i>9+ Years Experience</div>
+          <div class="trust-badge"><i class="bi bi-shield-check-fill"></i>Licensed Investor</div>
+          <div class="trust-badge"><i class="bi bi-people-fill"></i>200+ Homes Bought</div>
+        </div>
+      </div>
+
+      <!-- Right: Form -->
+      <div>
+        <div class="form-card">
+          <div class="form-card-header">
+            <h3>Request Your Cash Offer</h3>
+            <p>Free &amp; no-obligation — response within 24 hours</p>
+          </div>
+          <div class="form-card-body">
+            <form id="sellForm" onsubmit="submitSellForm(event)">
+              <div class="form-row">
+                <div class="form-group">
+                  <label>First Name <span class="req">*</span></label>
+                  <input type="text" placeholder="John" required />
+                </div>
+                <div class="form-group">
+                  <label>Last Name <span class="req">*</span></label>
+                  <input type="text" placeholder="Smith" required />
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Phone Number <span class="req">*</span></label>
+                <input type="tel" placeholder="(555) 000-0000" required />
+              </div>
+              <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" placeholder="john@example.com" />
+              </div>
+              <div class="form-group">
+                <label>Property Address <span class="req">*</span></label>
+                <input type="text" placeholder="123 Main Street" required />
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>City</label>
+                  <input type="text" placeholder="Edison" />
+                </div>
+                <div class="form-group">
+                  <label>State</label>
+                  <input type="text" placeholder="NJ" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Property Condition <span class="req">*</span></label>
+                <select required>
+                  <option value="">Select condition...</option>
+                  <option>Move-in ready</option>
+                  <option>Needs minor repairs</option>
+                  <option>Needs major repairs / renovation</option>
+                  <option>Distressed / Abandoned</option>
+                  <option>Fire / Flood / Water damage</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Your Situation (Optional)</label>
+                <select>
+                  <option value="">Select if applicable...</option>
+                  <option>Behind on mortgage / foreclosure</option>
+                  <option>Inherited property</option>
+                  <option>Divorce</option>
+                  <option>Relocating</option>
+                  <option>Tired landlord</option>
+                  <option>Vacant home</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Preferred Contact Method</label>
+                <div class="contact-pref">
+                  <div class="pref-option">
+                    <input type="radio" name="contact" id="pref-call" value="call" />
+                    <label for="pref-call"><i class="bi bi-telephone-fill"></i>Call</label>
+                  </div>
+                  <div class="pref-option">
+                    <input type="radio" name="contact" id="pref-text" value="text" checked />
+                    <label for="pref-text"><i class="bi bi-chat-dots-fill"></i>Text</label>
+                  </div>
+                  <div class="pref-option">
+                    <input type="radio" name="contact" id="pref-email" value="email" />
+                    <label for="pref-email"><i class="bi bi-envelope-fill"></i>Email</label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Tell Us About Your Property</label>
+                <textarea placeholder="Any additional details about your property or situation..."></textarea>
+              </div>
+              <button type="submit" class="btn btn-gold submit-btn">
+                <i class="bi bi-send-fill"></i>Get My Free Cash Offer
+              </button>
+              <p class="form-note"><i class="bi bi-shield-lock me-1"></i>100% Free &amp; No Obligation. Your info is never shared.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Situations -->
+<section id="situations-sell">
+  <div class="container" style="text-align:center;">
+    <p style="font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-light);margin-bottom:.5rem;">We Can Help</p>
+    <h2 style="font-family:Montserrat,sans-serif;font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;color:#fff;margin-bottom:2rem;">We Buy Homes In <span style="color:var(--gold-light);">Any Situation</span></h2>
+    <div class="sit-grid">
+      <div class="sit-card"><i class="bi bi-bank2"></i><span>Foreclosure</span></div>
+      <div class="sit-card"><i class="bi bi-file-earmark-text-fill"></i><span>Inherited Property</span></div>
+      <div class="sit-card"><i class="bi bi-heart-break-fill"></i><span>Divorce</span></div>
+      <div class="sit-card"><i class="bi bi-geo-alt-fill"></i><span>Relocating</span></div>
+      <div class="sit-card"><i class="bi bi-house-x-fill"></i><span>Vacant Home</span></div>
+      <div class="sit-card"><i class="bi bi-people-fill"></i><span>Problem Tenants</span></div>
+      <div class="sit-card"><i class="bi bi-tools"></i><span>Major Repairs Needed</span></div>
+      <div class="sit-card"><i class="bi bi-door-open-fill"></i><span>Tired Landlord</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Strip -->
+<div class="cta-strip">
+  <div class="container">
+    <h3>Prefer to Talk First?</h3>
+    <p>Call or text us — we're happy to answer any questions before you submit the form.</p>
+    <div class="cta-strip-btns">
+      <a href="tel:+18482448994" class="btn btn-white"><i class="bi bi-telephone-fill"></i>(848) 244-8994</a>
+      <a href="index.html" class="btn btn-outline-white"><i class="bi bi-house-fill"></i>Back to Home</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-simple">
+      <span>&copy; 2025 Cornerstone Housing and Development. All rights reserved.</span>
+      <div>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="faq.html">FAQ</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="sms-terms.html">SMS Terms</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function submitSellForm(e) {
+    e.preventDefault();
+    const form = document.getElementById('sellForm');
+    const btn = form.querySelector('button[type="submit"]');
+    btn.disabled = true;
+    btn.innerHTML = '<i class="bi bi-hourglass-split"></i> Submitting...';
+    setTimeout(() => {
+      document.querySelector('.form-card').innerHTML = `
+        <div style="padding:4rem 2rem;text-align:center;">
+          <div style="width:80px;height:80px;background:linear-gradient(135deg,#e8b84b,#c9922a);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;font-size:2.5rem;color:#fff;">
+            <i class="bi bi-check-lg"></i>
+          </div>
+          <h2 style="font-family:Montserrat,sans-serif;color:#0f2044;margin-bottom:.75rem;">Thank You!</h2>
+          <p style="color:#6b7280;max-width:380px;margin:0 auto 1.5rem;line-height:1.8;">We've received your information. A member of our team will contact you within <strong>24 hours</strong> with a fair cash offer.</p>
+          <a href="index.html" style="display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.8rem;background:linear-gradient(135deg,#e8b84b,#c9922a);color:#fff;border-radius:10px;font-family:Montserrat,sans-serif;font-weight:700;font-size:.9rem;">
+            <i class="bi bi-house-fill"></i>Back to Home
+          </a>
+        </div>`;
+    }, 1200);
+  }
+</script>
+</body>
+</html>

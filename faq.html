@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ | Cornerstone Housing and Development NJ</title>
+  <meta name="description" content="Frequently asked questions about selling your New Jersey home for cash to Cornerstone Housing and Development." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <style>
+    :root{--navy:#0f2044;--navy-dark:#091628;--navy-mid:#1a3560;--gold:#c9922a;--gold-light:#e8b84b;--gold-dark:#a67520;--white:#ffffff;--off-white:#f7f8fc;--gray:#6b7280;--gray-light:#e5e9f0;--text:#1f2937;--radius:10px;--shadow:0 4px 24px rgba(15,32,68,.12);--transition:all .3s cubic-bezier(.4,0,.2,1);}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Inter',sans-serif;color:var(--text);background:var(--white);line-height:1.7;}
+    a{text-decoration:none;color:inherit;}
+    h1,h2,h3{font-family:'Montserrat',sans-serif;line-height:1.2;}
+    .container{max-width:1000px;margin:0 auto;padding:0 2rem;}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.8rem;border-radius:var(--radius);font-family:'Montserrat',sans-serif;font-weight:700;font-size:.9rem;cursor:pointer;border:none;transition:var(--transition);}
+    .btn-gold{background:linear-gradient(135deg,var(--gold-light),var(--gold));color:var(--white);box-shadow:0 4px 20px rgba(201,146,42,.4);}
+    .btn-gold:hover{transform:translateY(-2px);color:var(--white);}
+    #navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1rem 0;background:var(--navy-dark);box-shadow:0 4px 30px rgba(0,0,0,.35);}
+    .nav-inner{max-width:1200px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;}
+    .nav-logo{font-family:'Montserrat',sans-serif;font-weight:800;font-size:1.15rem;color:var(--white);display:flex;align-items:center;gap:.6rem;}
+    .nav-logo .logo-icon{width:38px;height:38px;background:linear-gradient(135deg,var(--gold-light),var(--gold));border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;}
+    .nav-logo span{color:var(--gold-light);}
+    .page-hero{background:linear-gradient(135deg,var(--navy-dark) 0%,var(--navy-mid) 100%);padding:8rem 0 4rem;text-align:center;}
+    .page-hero h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:var(--white);margin-bottom:.75rem;}
+    .page-hero h1 span{color:var(--gold-light);}
+    .page-hero p{color:rgba(255,255,255,.7);font-size:1.05rem;max-width:560px;margin:0 auto;}
+    .faq-section{padding:5rem 0;background:var(--off-white);}
+    .faq-category{margin-bottom:3rem;}
+    .faq-cat-title{font-size:1rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--gold-dark);margin-bottom:1.2rem;display:flex;align-items:center;gap:.75rem;padding-bottom:.75rem;border-bottom:2px solid var(--gold-light);}
+    .faq-cat-title i{font-size:1.2rem;}
+    .faq-item{background:var(--white);border:1.5px solid var(--gray-light);border-radius:12px;margin-bottom:.75rem;overflow:hidden;transition:border-color .3s;}
+    .faq-item.open{border-color:var(--gold);}
+    .faq-question{width:100%;background:none;border:none;text-align:left;padding:1.2rem 1.5rem;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-family:'Montserrat',sans-serif;font-weight:700;font-size:.95rem;color:var(--navy);gap:1rem;}
+    .faq-item.open .faq-question{color:var(--gold-dark);}
+    .faq-icon{flex-shrink:0;width:28px;height:28px;background:var(--off-white);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8rem;color:var(--navy);transition:transform .3s,background .3s;}
+    .faq-item.open .faq-icon{transform:rotate(45deg);background:var(--gold);color:var(--white);}
+    .faq-answer{max-height:0;overflow:hidden;transition:max-height .4s ease;}
+    .faq-item.open .faq-answer{max-height:400px;}
+    .faq-answer-inner{padding:0 1.5rem 1.3rem;font-size:.92rem;color:var(--gray);line-height:1.85;}
+    .cta-strip{background:linear-gradient(135deg,var(--navy-dark) 0%,var(--navy-mid) 100%);padding:4rem 0;text-align:center;}
+    .cta-strip h3{font-size:1.5rem;color:var(--white);font-weight:800;margin-bottom:.5rem;}
+    .cta-strip p{color:rgba(255,255,255,.65);margin-bottom:1.5rem;}
+    .cta-strip .phone{display:inline-flex;align-items:center;gap:.5rem;color:var(--gold-light);font-family:'Montserrat',sans-serif;font-size:1.4rem;font-weight:800;margin-bottom:1.2rem;}
+    footer{background:var(--navy-dark);padding:2rem 0;color:rgba(255,255,255,.6);}
+    .footer-simple{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;font-size:.82rem;}
+    .footer-simple a{color:rgba(255,255,255,.6);margin-left:1.5rem;}
+    .footer-simple a:hover{color:var(--gold-light);}
+  </style>
+</head>
+<body>
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-icon"><i class="bi bi-house-heart-fill"></i></div>
+      <div>Cornerstone<br><span>Housing &amp; Development</span></div>
+    </a>
+    <a href="sell.html" class="btn btn-gold"><i class="bi bi-currency-dollar"></i>Get Cash Offer</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="container">
+    <h1>Frequently Asked <span>Questions</span></h1>
+    <p>Everything you need to know about selling your home to Cornerstone Housing and Development.</p>
+  </div>
+</div>
+
+<div class="faq-section">
+  <div class="container">
+
+    <div class="faq-category">
+      <div class="faq-cat-title"><i class="bi bi-currency-dollar"></i>About Our Offers</div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">How do you calculate your cash offer? <span class="faq-icon"><i class="bi bi-plus-lg"></i></span></button>
+        <div class="faq-answer"><p class="faq-answer-inner">We look at several factors: the property's current condition, recent comparable sales in your neighborhood, estimated repair costs, and current market trends. We aim to make a fair offer that reflects the true value of your home. We're happy to walk you through our numbers — complete transparency is part of our process.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">Is the offer really free and no-obligation? <span class="faq-icon"><i class="bi bi-plus-lg"></i></span></button>
+        <div class="faq-answer"><p class="faq-answer-inner">Absolutely. Getting a cash offer from us costs you nothing and commits you to nothing. You're free to decline, take time to think, or compare with other options. There's zero pressure from us — ever.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">How quickly will I receive an offer? <span class="faq-icon"><i class="bi bi-plus-lg"></i></span></button>
+        <div class="faq-answer"><p class="faq-answer-inner">In most cases, we'll reach out within 24 hours of receiving your information with a preliminary offer. After a quick property review (which can often be done remotely), we'll present a formal written offer within 1–3 business days.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">Will you negotiate or is the first offer final? <span class="faq-icon"><i class="bi bi-plus-lg"></i></span></button>
+        <div class="faq-answer"><p class="faq-answer-inner">We're always open to a conversation. If you have concerns about the offer or additional information that might affect value, we're happy to discuss. Our goal is to reach a number that works for both of us.</p></div>
+      </div>
+    </div>
+
+    <div class="faq-category">
+      <div class="faq-cat-title"><i class="bi bi-house-fill"></i>About Your Property</div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">Do I need to make repairs or clean the house? <span class="faq-icon"><i class="bi bi-plus-lg"></i></span></button>
+        <div class="faq-answer"><p class="faq-answer-inner">Not at all. We buy homes in <strong>as-is condition</strong> — no repairs, no painting, no cleaning required. You can leave behind furniture, appliances, or anything else you don't want. We take care of everything after closing.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">Do you buy homes that need major work? <span class="faq-icon"><i class="bi bi-plus-lg"></i></span></button>
+        <div class="faq-answer"><p class="faq-answer-inner">Yes. We regularly purchase homes that need significant renovation — foundation issues, roof problems, water damage, fire damage, and more. Condition doesn't disqualify a property from consideration.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">What if my house has tenants? <span class="faq-icon"><i class="bi bi-plus-lg"></i></span></button>
+        <div class="faq-answer"><p class="faq-answer-inner">We can purchase properties with tenants in place. We'll handle all tenant-related matters after the sale closes. You don't have to go through the eviction process or wait for the property to be vacant.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">Do you buy properties with liens or code violations? <span class="faq-icon"><i class="bi bi-plus-lg"></i></span></button>
+        <div class="faq-answer"><p class="faq-answer-inner">In many cases, yes. We work with properties that have tax liens, code violations, or other title encumbrances. These situations are handled on a case-by-case basis — contact us to discuss your specific situation.</p></div>
+      </div>
+    </div>
+
+    <div class="faq-category">
+      <div class="faq-cat-title"><i class="bi bi-calendar-check-fill"></i>The Closing Process</div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">How fast can we close? <span class="faq-icon"><i class="bi bi-plus-lg"></i></span></button>
+        <div class="faq-answer"><p class="faq-answer-inner">We can typically close in <strong>7–14 days</strong> once a purchase agreement is signed. Title search and closing paperwork are handled by a licensed title company. If you need more time before closing, we can accommodate that too.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">Who handles the closing? <span class="faq-icon"><i class="bi bi-plus-lg"></i></span></button>
+        <div class="faq-answer"><p class="faq-answer-inner">All closings are conducted through a licensed New Jersey title company. This protects you as the seller and ensures everything is handled professionally and legally. We coordinate everything — you simply show up to sign.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">Are there any fees or closing costs for me? <span class="faq-icon"><i class="bi bi-plus-lg"></i></span></button>
+        <div class="faq-answer"><p class="faq-answer-inner">None. We cover standard closing costs. There are no realtor commissions, no service fees, no hidden charges. The offer we make is the amount you walk away with at closing (minus any existing mortgages or liens that are paid off at closing).</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">How do I receive payment? <span class="faq-icon"><i class="bi bi-plus-lg"></i></span></button>
+        <div class="faq-answer"><p class="faq-answer-inner">Payment is made via certified check or wire transfer at closing, coordinated through the title company. Funds are typically available the same day as closing.</p></div>
+      </div>
+    </div>
+
+    <div class="faq-category">
+      <div class="faq-cat-title"><i class="bi bi-shield-check-fill"></i>Trust &amp; Legitimacy</div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">Is Cornerstone Housing a legitimate company? <span class="faq-icon"><i class="bi bi-plus-lg"></i></span></button>
+        <div class="faq-answer"><p class="faq-answer-inner">Yes. Cornerstone Housing and Development is a licensed New Jersey real estate investment company with over 9 years of experience and 200+ completed purchases. All transactions are conducted through licensed title companies with full legal documentation.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">Will you share my information? <span class="faq-icon"><i class="bi bi-plus-lg"></i></span></button>
+        <div class="faq-answer"><p class="faq-answer-inner">Your information is completely confidential. We never sell or share your personal information with third parties without your explicit consent.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">Do you work with investors or partners? <span class="faq-icon"><i class="bi bi-plus-lg"></i></span></button>
+        <div class="faq-answer"><p class="faq-answer-inner">Cornerstone Housing and Development is a real estate investment company and may partner with other investors on certain transactions. This never affects your offer amount or closing process — it's simply how real estate investment companies operate on the backend.</p></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="cta-strip">
+  <div class="container">
+    <h3>Still Have Questions?</h3>
+    <p>Call or text us — we're happy to answer anything before you commit to a thing.</p>
+    <a href="tel:+18482448994" class="phone"><i class="bi bi-telephone-fill"></i>(848) 244-8994</a><br>
+    <a href="sell.html" class="btn btn-gold"><i class="bi bi-currency-dollar"></i>Get My Free Cash Offer</a>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-simple">
+      <span>&copy; 2025 Cornerstone Housing and Development. All rights reserved.</span>
+      <div>
+        <a href="index.html">Home</a>
+        <a href="sell.html">Sell</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="sms-terms.html">SMS Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function toggleFaq(btn) {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+</script>
+</body>
+</html>
