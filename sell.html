@@ -332,42 +332,44 @@
             <p>Free &amp; no-obligation — response within 24 hours</p>
           </div>
           <div class="form-card-body">
-            <form id="sellForm" onsubmit="submitSellForm(event)">
+            <form id="sellForm" name="sell" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="submitSellForm(event)">
+              <input type="hidden" name="form-name" value="sell" />
+              <p hidden><label>Don't fill this out: <input name="bot-field" /></label></p>
               <div class="form-row">
                 <div class="form-group">
                   <label>First Name <span class="req">*</span></label>
-                  <input type="text" placeholder="John" required />
+                  <input type="text" name="first_name" placeholder="John" required />
                 </div>
                 <div class="form-group">
                   <label>Last Name <span class="req">*</span></label>
-                  <input type="text" placeholder="Smith" required />
+                  <input type="text" name="last_name" placeholder="Smith" required />
                 </div>
               </div>
               <div class="form-group">
                 <label>Phone Number <span class="req">*</span></label>
-                <input type="tel" placeholder="(555) 000-0000" required />
+                <input type="tel" name="phone" placeholder="(555) 000-0000" required />
               </div>
               <div class="form-group">
                 <label>Email Address</label>
-                <input type="email" placeholder="john@example.com" />
+                <input type="email" name="email" placeholder="john@example.com" />
               </div>
               <div class="form-group">
                 <label>Property Address <span class="req">*</span></label>
-                <input type="text" placeholder="123 Main Street" required />
+                <input type="text" name="address" placeholder="123 Main Street" required />
               </div>
               <div class="form-row">
                 <div class="form-group">
                   <label>City</label>
-                  <input type="text" placeholder="Edison" />
+                  <input type="text" name="city" placeholder="Edison" />
                 </div>
                 <div class="form-group">
                   <label>State</label>
-                  <input type="text" placeholder="NJ" />
+                  <input type="text" name="state" placeholder="NJ" />
                 </div>
               </div>
               <div class="form-group">
                 <label>Property Condition <span class="req">*</span></label>
-                <select required>
+                <select name="message" required>
                   <option value="">Select condition...</option>
                   <option>Move-in ready</option>
                   <option>Needs minor repairs</option>
@@ -468,14 +470,16 @@
   </div>
 </footer>
 
+<script src="leads.js"></script>
 <script>
-  function submitSellForm(e) {
+  async function submitSellForm(e) {
     e.preventDefault();
     const form = document.getElementById('sellForm');
     const btn = form.querySelector('button[type="submit"]');
     btn.disabled = true;
     btn.innerHTML = '<i class="bi bi-hourglass-split"></i> Submitting...';
-    setTimeout(() => {
+    await sendLead(form, 'sell');
+    {
       document.querySelector('.form-card').innerHTML = `
         <div style="padding:4rem 2rem;text-align:center;">
           <div style="width:80px;height:80px;background:linear-gradient(135deg,#e8b84b,#c9922a);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;font-size:2.5rem;color:#fff;">
@@ -487,7 +491,7 @@
             <i class="bi bi-house-fill"></i>Back to Home
           </a>
         </div>`;
-    }, 1200);
+    }
   }
 </script>
 </body>

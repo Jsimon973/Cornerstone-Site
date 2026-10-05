@@ -1088,28 +1088,30 @@
     <div class="hero-form-card">
       <p class="form-title">Get Your Cash Offer Today</p>
       <p class="form-sub">Free, no-obligation offer in 24 hours or less.</p>
-      <form id="heroForm" onsubmit="submitForm(event, 'heroForm')">
+      <form id="heroForm" name="hero-offer" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="submitForm(event, 'heroForm')">
+        <input type="hidden" name="form-name" value="hero-offer" />
+        <p hidden><label>Don't fill this out: <input name="bot-field" /></label></p>
         <div class="form-row">
           <div class="form-group">
             <label>First Name</label>
-            <input type="text" placeholder="John" required />
+            <input type="text" name="first_name" placeholder="John" required />
           </div>
           <div class="form-group">
             <label>Last Name</label>
-            <input type="text" placeholder="Smith" required />
+            <input type="text" name="last_name" placeholder="Smith" required />
           </div>
         </div>
         <div class="form-group">
           <label>Phone Number</label>
-          <input type="tel" placeholder="(555) 000-0000" required />
+          <input type="tel" name="phone" placeholder="(555) 000-0000" required />
         </div>
         <div class="form-group">
           <label>Property Address</label>
-          <input type="text" placeholder="123 Main St, City, NJ" required />
+          <input type="text" name="property_address" placeholder="123 Main St, City, NJ" required />
         </div>
         <div class="form-group">
           <label>Property Condition</label>
-          <select>
+          <select name="message">
             <option value="">Select condition...</option>
             <option>Move-in ready</option>
             <option>Needs minor repairs</option>
@@ -1584,6 +1586,7 @@
   <a href="tel:+18482448994" class="btn btn-outline"><i class="bi bi-telephone-fill"></i>Call Now</a>
 </div>
 
+<script src="leads.js"></script>
 <script>
   // ─── Navbar scroll ───
   const navbar = document.getElementById('navbar');
@@ -1633,13 +1636,14 @@
   document.querySelectorAll('.stat-num').forEach(el => counterObserver.observe(el));
 
   // ─── Form submit ───
-  function submitForm(e, formId) {
+  async function submitForm(e, formId) {
     e.preventDefault();
     const form = document.getElementById(formId);
     const btn = form.querySelector('button[type="submit"]');
     btn.disabled = true;
     btn.innerHTML = '<i class="bi bi-hourglass-split"></i> Sending...';
-    setTimeout(() => {
+    await sendLead(form, form.getAttribute('name') || formId);
+    {
       form.innerHTML = `
         <div style="text-align:center;padding:2rem 0;">
           <div style="width:70px;height:70px;background:linear-gradient(135deg,#e8b84b,#c9922a);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.2rem;font-size:2rem;color:#fff;">
@@ -1648,7 +1652,7 @@
           <h3 style="font-family:Montserrat,sans-serif;color:#0f2044;margin-bottom:.5rem;">We Got Your Info!</h3>
           <p style="color:#6b7280;font-size:.9rem;">We'll review your property and contact you within 24 hours with a fair cash offer.</p>
         </div>`;
-    }, 1000);
+    }
   }
 </script>
 </body>

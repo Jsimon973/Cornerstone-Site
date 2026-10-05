@@ -140,28 +140,30 @@
           <p>We'll get back to you within 24 hours</p>
         </div>
         <div class="form-card-body">
-          <form id="contactForm" onsubmit="submitContact(event)">
+          <form id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="submitContact(event)">
+            <input type="hidden" name="form-name" value="contact" />
+            <p hidden><label>Don't fill this out: <input name="bot-field" /></label></p>
             <div class="form-row">
               <div class="form-group">
                 <label>First Name</label>
-                <input type="text" placeholder="John" required />
+                <input type="text" name="first_name" placeholder="John" required />
               </div>
               <div class="form-group">
                 <label>Last Name</label>
-                <input type="text" placeholder="Smith" required />
+                <input type="text" name="last_name" placeholder="Smith" required />
               </div>
             </div>
             <div class="form-group">
               <label>Phone Number</label>
-              <input type="tel" placeholder="(555) 000-0000" required />
+              <input type="tel" name="phone" placeholder="(555) 000-0000" required />
             </div>
             <div class="form-group">
               <label>Email Address</label>
-              <input type="email" placeholder="john@example.com" />
+              <input type="email" name="email" placeholder="john@example.com" />
             </div>
             <div class="form-group">
               <label>Subject</label>
-              <select>
+              <select name="subject">
                 <option value="">Select a topic...</option>
                 <option>I want to sell my house</option>
                 <option>I have a question about your process</option>
@@ -171,11 +173,11 @@
             </div>
             <div class="form-group">
               <label>Property Address (if applicable)</label>
-              <input type="text" placeholder="123 Main St, City, NJ" />
+              <input type="text" name="property_address" placeholder="123 Main St, City, NJ" />
             </div>
             <div class="form-group">
               <label>Your Message</label>
-              <textarea placeholder="Tell us how we can help..." required></textarea>
+              <textarea name="message" placeholder="Tell us how we can help..." required></textarea>
             </div>
             <button type="submit" class="btn btn-gold submit-btn">
               <i class="bi bi-send-fill"></i>Send Message
@@ -204,13 +206,15 @@
   </div>
 </footer>
 
+<script src="leads.js"></script>
 <script>
-  function submitContact(e) {
+  async function submitContact(e) {
     e.preventDefault();
     const btn = e.target.querySelector('button[type="submit"]');
     btn.disabled = true;
     btn.innerHTML = '<i class="bi bi-hourglass-split"></i> Sending...';
-    setTimeout(() => {
+    await sendLead(e.target, 'contact');
+    {
       document.querySelector('.form-card-body').innerHTML = `
         <div style="text-align:center;padding:3rem 1rem;">
           <div style="width:72px;height:72px;background:linear-gradient(135deg,#e8b84b,#c9922a);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;font-size:2rem;color:#fff;">
@@ -219,7 +223,7 @@
           <h3 style="font-family:Montserrat,sans-serif;color:#0f2044;margin-bottom:.5rem;">Message Sent!</h3>
           <p style="color:#6b7280;font-size:.9rem;max-width:340px;margin:0 auto;">We've received your message and will get back to you within <strong>24 hours</strong>. For faster service, call or text us at <a href="tel:+18482448994" style="color:#c9922a;font-weight:600;">(848) 244-8994</a>.</p>
         </div>`;
-    }, 1000);
+    }
   }
 </script>
 </body>
